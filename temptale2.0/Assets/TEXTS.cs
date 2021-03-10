@@ -164,7 +164,7 @@ namespace DialogueBassclass
             audioSource.PlayOneShot(sound1[1]);
             yield return new WaitForSeconds(0.25f);
             c.GetComponent<overworldmove>().dialogs[0].GetComponent<onoff>().on(false);
-            SceneManager.LoadScene ("battle");
+            SceneManager.LoadScene ("boss battle");
         }
         public void text(string a)
         {
