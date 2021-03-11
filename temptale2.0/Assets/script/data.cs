@@ -11,7 +11,7 @@ public class data
     public int Savetime;//
     public string name;//
     public int Loadtimehere;
-    public float[] position = new float[3];
+    public int positionsavepoint;
 
     public data(inventory Inventory)
     {
@@ -19,9 +19,7 @@ public class data
        invtext = Inventory.inventorysname;
        LV = settings.LVget();
        name = nameM.nameget();
-       position[0] = Inventory.transform.position.x;
-       position[1] = Inventory.transform.position.y;
-       position[2] = Inventory.transform.position.z;
+       positionsavepoint = Inventory.Savepoint;
        Savetime+=1;
     }
 }

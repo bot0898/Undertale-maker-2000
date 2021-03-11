@@ -42,6 +42,7 @@ public class enemy : MonoBehaviour
         StartCoroutine("timer");
         if (HP <= 0)
         { 
+            DialogueBassclass.dialogs.winget("=",2);
             d.GetComponent<DialogueBassclass.dialogs>().youwin(XP); 
             gameObject.SetActive (false);
         }

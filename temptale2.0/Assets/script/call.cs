@@ -31,7 +31,7 @@ namespace DialogueBassclass
             audioon = true;
             StartCoroutine("timeheart");
         }
-        void FixedUpdate()
+        void Update()
         {
             if (oncea[1] == false && turn == 1)
             {
@@ -39,19 +39,23 @@ namespace DialogueBassclass
                 oncea[1] = true;
                 turn += 1;
             }
-            if (Input.GetKey(KeyCode.Return) && oncea[2] == false && turn == 2 && ends == true)
+            if (Input.GetKey(KeyCode.Return) && oncea[2] == false && turn == 2&&ends == true)
             {
                 ends = false;
                 StartCoroutine(Dialogue(input[1],"",false,0.00005f,null));  
                 oncea[2] = true;
                 turn += 1;
             } 
-            if (Input.GetKey(KeyCode.Return) && oncea[3] == false && turn == 3 && ends == true)
+            if (Input.GetKey(KeyCode.Return) && oncea[3] == false && turn == 3 &&ends == true)
             {
                 ends = false;
                 GetComponent<TextMesh>().text = "";
                 oncea[3] = true;
-                SceneManager.LoadScene ("battle");
+                SceneManager.LoadScene("map");
+            }
+            if (!Input.GetKey(KeyCode.Return))
+            {
+               ends = true; 
             }
         }
         IEnumerator timeheart()

@@ -14,23 +14,45 @@ public class inventory : MonoBehaviour
     public GameObject menu2;
     public overworldmove move;
     public int STATS;
+    public int Savepoint;
     public float HP;
+    public Vector2[] SavepointVector2;
+    public static Vector2 fightposition;
+    public static int killcount;
     // Start is called before the first frame update
     void Start()
     {
         menu.GetComponent<onoff>().on(false);
-        data Data = savesystum.Load();
-        inventorys = Data.inv;
-        inventorysname = Data.invtext;
-        settings.LVChange(Data.LV);
-        nameM.namechange(name);
-        transform.position = new Vector3(Data.position[0],Data.position[1],Data.position[2]);
-        Debug.Log("Loaded");
+        fightposition = DialogueBassclass.dialogs.backposget();
+        if ( DialogueBassclass.dialogs.winget(null,0) == 0)
+        {
+            data Data = savesystum.Load();
+            inventorys = Data.inv;
+            inventorysname = Data.invtext;
+            settings.LVChange(Data.LV);
+            nameM.namechange(Data.name);
+            transform.position = SavepointVector2[Data.positionsavepoint];
+            Debug.Log("Loaded");
+            DialogueBassclass.TEXTS.HPchange(DialogueBassclass.TEXTS.MHPget(),"=");
+        }
+        if ( DialogueBassclass.dialogs.winget(null,0) == 1)
+        {
+            transform.position = fightposition;
+        }
+        if ( DialogueBassclass.dialogs.winget(null,0) == 2)
+        {
+            transform.position = fightposition;
+            killcount += 1;
+        }
     }
-
+    public static Vector2 fightpositionget()
+    {
+        return fightposition;
+    }
     // Update is called once per frame
     void Update()
     {
+        fightposition = transform.position;
         if (Input.GetKey("c"))
         {
             menu.GetComponent<onoff>().on(true);
@@ -61,6 +83,7 @@ public class inventory : MonoBehaviour
         if (other.gameObject.CompareTag("save")&&Input.GetKey(KeyCode.Return))
         {
             DialogueBassclass.TEXTS.HPchange(DialogueBassclass.TEXTS.MHPget(),"=");
+            Savepoint = other.gameObject.GetComponent<saveponit>().point;
             savesystum.Save(this);
             Debug.Log("saved");
         }
@@ -70,8 +93,8 @@ public class inventory : MonoBehaviour
             inventorys = Data.inv;
             inventorysname = Data.invtext;
             settings.LVChange(Data.LV);
-            nameM.namechange(name);
-            transform.position = new Vector3(Data.position[0],Data.position[1],Data.position[2]);
+            nameM.namechange(Data.name);
+            transform.position = SavepointVector2[Data.positionsavepoint];
             Debug.Log("Loaded");
         }
     }

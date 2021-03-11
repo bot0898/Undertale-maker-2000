@@ -24,9 +24,13 @@ namespace DialogueBassclass
         public damage Damage;
         public enemy Enemy;
         public Color color1;
+        public static int win;
+        public static Vector2 backpos;
         // Start is called before the first frame update
         void Start()
         {
+            win = 0;
+            backpos = inventory.fightpositionget();
             if (lang == 0)
             {
                 GetComponent<TextMesh>().font = lang_en;
@@ -69,10 +73,23 @@ namespace DialogueBassclass
             {
                 heartmove.presseds = true;
                 this.GetComponent<DialogueBassclass.dialogs>().youwin(0); 
+                win = 1;
                 Attackmaker.ends = true;
                 c[4] = false;
             }
         }
+        public static int winget(string a,int i)
+        {
+            if (a == "=")
+            {
+                win = i;
+            }
+            return win;
+	    }
+        public static Vector2 backposget()
+        {
+            return backpos;
+	    }
         public void fight()
         {
             if (lang == 0)

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 using UnityEngine.SceneManagement;
 
 public class start : MonoBehaviour
@@ -16,7 +17,11 @@ public class start : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-          SceneManager.LoadScene ("menu");  
+          string Path = Application.persistentDataPath +"/player.NEHEHE";
+          if(File.Exists(Path))
+          {
+          SceneManager.LoadScene ("menu1");  
+          }
         }
     }
 }
