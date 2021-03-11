@@ -14,6 +14,6 @@ public class HP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<TextMesh>().text = Damage.HP/2 + "/"+Damage.MaxHP/2;
+        GetComponent<TextMesh>().text = DialogueBassclass.TEXTS.HPchange(0,"+") + "/"+DialogueBassclass.TEXTS.MHPget();
     }
 }

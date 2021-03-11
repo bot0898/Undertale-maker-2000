@@ -12,7 +12,7 @@ public class HPbar : MonoBehaviour
     void Update()
     {
         hope = Damage.HP;
-        Vector3 hopebar = new Vector3(hope*0.5f, 25, 1);
+        Vector3 hopebar = new Vector3( DialogueBassclass.TEXTS.HPchange(0,"+"), 25, 1);
         gameObject.transform.localScale = hopebar;
     }
 }

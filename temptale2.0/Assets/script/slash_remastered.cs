@@ -35,9 +35,7 @@ public class slash_remastered : MonoBehaviour
     IEnumerator sl(int b)
     {
         damage = Random.Range (a[0], a[1]);
-        Debug.Log(damage);
         damage *= b;
-        Debug.Log(damage+"damage");
         damages = damage.ToString();
         anim.SetBool("slash", true);
         yield return new WaitForSeconds(0.8f);

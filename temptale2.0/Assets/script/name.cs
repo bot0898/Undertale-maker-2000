@@ -9,13 +9,11 @@ public class name : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lV =settings.LVget();
-        names = nameM.nameget();
     }
 
     // Update is called once per frame
     void Update()
     {
-        GetComponent<TextMesh>().text = names+"  LV "+lV+"   HP";
+        GetComponent<TextMesh>().text = nameM.nameget()+"  LV "+settings.LVget()+"   HP";
     }
 }

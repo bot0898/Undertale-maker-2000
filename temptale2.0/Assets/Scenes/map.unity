@@ -286,7 +286,6 @@ MonoBehaviour:
   c: {fileID: 0}
   d: {fileID: 0}
   sound1: []
-  audioSource: {fileID: 0}
 --- !u!1 &159097194
 GameObject:
   m_ObjectHideFlags: 0
@@ -1782,7 +1781,6 @@ MonoBehaviour:
   c: {fileID: 0}
   d: {fileID: 0}
   sound1: []
-  audioSource: {fileID: 0}
 --- !u!102 &1129108281
 TextMesh:
   serializedVersion: 3
@@ -33674,7 +33672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound3: {fileID: 0}
   ends: 0
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 359598103}
   LayerName: ui
   SortingOrder: 100
   type: 0
@@ -33684,7 +33682,6 @@ MonoBehaviour:
   sound1:
   - {fileID: 8300000, guid: 938066f7dea45164f818b3975978322f, type: 3}
   - {fileID: 8300000, guid: b1db86680bee2924f80e73bd27157387, type: 3}
-  audioSource: {fileID: 359598103}
 --- !u!102 &1897550060
 TextMesh:
   serializedVersion: 3

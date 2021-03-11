@@ -58,8 +58,9 @@ public class inventory : MonoBehaviour
 		        }   
             }
         }
-        if (other.gameObject.CompareTag("save")&&Input.GetKeyDown(KeyCode.Return))
+        if (other.gameObject.CompareTag("save")&&Input.GetKey(KeyCode.Return))
         {
+            DialogueBassclass.TEXTS.HPchange(DialogueBassclass.TEXTS.MHPget(),"=");
             savesystum.Save(this);
             Debug.Log("saved");
         }

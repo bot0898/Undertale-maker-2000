@@ -17,7 +17,7 @@ public class damage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DialogueBassclass.TEXTS.HPchange(0,"+") <= DialogueBassclass.TEXTS.MHPget())
+        if (DialogueBassclass.TEXTS.HPchange(0,"+") <=0)
         {
             SceneManager.LoadScene ("GAMEOVER");
         }
@@ -30,7 +30,7 @@ public class damage : MonoBehaviour
     {
         if (attacktype == 0 && other.gameObject.CompareTag("attack"))
         {
-            DialogueBassclass.TEXTS.HPchange(damag*2,"-");
+            DialogueBassclass.TEXTS.HPchange(damag,"-");
         }
     }
 }

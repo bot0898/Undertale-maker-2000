@@ -10,12 +10,13 @@ public class redhp : MonoBehaviour
     void Start()
     {
         hope = Damage.MaxHP;
+        Vector3 hopebar = new Vector3( DialogueBassclass.TEXTS.HPchange(0,"+"), 25, 1);
+        gameObject.transform.localScale = hopebar;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 hopebar = new Vector3(hope*0.5f, 25, 1);
-        gameObject.transform.localScale = hopebar;
+        
     }
 }
