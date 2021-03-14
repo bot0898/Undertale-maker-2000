@@ -13,6 +13,9 @@ public class normal_encount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (overworldmove.moveget("+",0) >= 450)
+        {
+            
+        }
     }
 }

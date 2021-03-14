@@ -8,6 +8,12 @@ TextureImporter:
   - first:
       213: 1628995139653728656
     second: touka (1)_1
+  - first:
+      213: -720885577086398146
+    second: touka (1)_2
+  - first:
+      213: -1868098106043594797
+    second: touka (1)_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -150,7 +156,7 @@ TextureImporter:
         width: 78
         height: 104
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -158,6 +164,48 @@ TextureImporter:
       bones: []
       spriteID: 099f5efd27a5b9610800000000000000
       internalID: 1628995139653728656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touka (1)_2
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1034
+        width: 72
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3110161366eef5f0800000000000000
+      internalID: -720885577086398146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: touka (1)_3
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 790
+        width: 72
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d701bf8bae2316e0800000000000000
+      internalID: -1868098106043594797
       vertices: []
       indices: 
       edges: []

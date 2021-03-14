@@ -10,7 +10,7 @@ public class overworldmove : MonoBehaviour
     public SpriteRenderer rd;
     public Animator anim; 
     public GameObject[] dialogs;
-    public int move;
+    public static int move;
     public bool stop;
     public bool encount;
     public static int nowbattle;
@@ -18,6 +18,18 @@ public class overworldmove : MonoBehaviour
     void Start()
     {
         
+    }
+    public static int moveget(string a,int b)
+    {
+        if (a =="=")
+        {
+            move =b;
+        }
+        if (a =="+")
+        {
+            move +=b;
+        }
+        return move; 
     }
     public static int nowbattleget()
     {
