@@ -18,6 +18,10 @@ public class enemy : MonoBehaviour
     void Start()
     {
         rd = GetComponent<SpriteRenderer>();
+        if (overworldmove.nowbattleget() == 1)
+        {
+            rd.sprite =b[3];
+        }
     }
 
     // Update is called once per frame
@@ -37,12 +41,15 @@ public class enemy : MonoBehaviour
         HP -= a;
         if (a != 0)
         {
-           rd.sprite = b[1];
+            if (overworldmove.nowbattleget() == 0)
+            {
+                rd.sprite = b[1];
+            }
         }
         StartCoroutine("timer");
         if (HP <= 0)
         { 
-            DialogueBassclass.dialogs.winget("=",2);
+            DialogueBassclass.dialogs.winget("=",2,overworldmove.nowbattleget());
             d.GetComponent<DialogueBassclass.dialogs>().youwin(XP); 
             gameObject.SetActive (false);
         }
@@ -50,6 +57,9 @@ public class enemy : MonoBehaviour
     IEnumerator timer()
     {
         yield return new WaitForSeconds(1f);
-        rd.sprite = b[0];
+        if (overworldmove.nowbattleget() == 0)
+        {
+            rd.sprite = b[0];
+        }
     }
 }

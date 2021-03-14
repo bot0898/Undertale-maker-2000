@@ -19,12 +19,15 @@ public class inventory : MonoBehaviour
     public Vector2[] SavepointVector2;
     public static Vector2 fightposition;
     public static int killcount;
+    public static float atk;
+    public static float dfs;
+    public static int armor;
     // Start is called before the first frame update
     void Start()
     {
         menu.GetComponent<onoff>().on(false);
         fightposition = DialogueBassclass.dialogs.backposget();
-        if ( DialogueBassclass.dialogs.winget(null,0) == 0)
+        if ( DialogueBassclass.dialogs.winget(null,0,overworldmove.nowbattleget()) == 0)
         {
             data Data = savesystum.Load();
             inventorys = Data.inv;
@@ -35,11 +38,11 @@ public class inventory : MonoBehaviour
             Debug.Log("Loaded");
             DialogueBassclass.TEXTS.HPchange(DialogueBassclass.TEXTS.MHPget(),"=");
         }
-        if ( DialogueBassclass.dialogs.winget(null,0) == 1)
+        if ( DialogueBassclass.dialogs.winget(null,0,overworldmove.nowbattleget()) == 1)
         {
             transform.position = fightposition;
         }
-        if ( DialogueBassclass.dialogs.winget(null,0) == 2)
+        if ( DialogueBassclass.dialogs.winget(null,0,overworldmove.nowbattleget()) == 2)
         {
             transform.position = fightposition;
             killcount += 1;

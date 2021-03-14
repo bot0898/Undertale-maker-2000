@@ -13,12 +13,16 @@ public class overworldmove : MonoBehaviour
     public int move;
     public bool stop;
     public bool encount;
+    public static int nowbattle;
     // Start is called before the first frame update
     void Start()
     {
         
     }
-
+    public static int nowbattleget()
+    {
+        return nowbattle;
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -100,6 +104,7 @@ public class overworldmove : MonoBehaviour
         }
         if (other.gameObject.CompareTag("encounter"))
         {
+            nowbattle = other.gameObject.GetComponent<dead>().type;
             encount = true;
             other.gameObject.SetActive(false);
             dialogs[0].GetComponent<onoff>().on(true);

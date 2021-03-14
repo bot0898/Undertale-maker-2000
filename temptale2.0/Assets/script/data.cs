@@ -12,6 +12,7 @@ public class data
     public string name;//
     public int Loadtimehere;
     public int positionsavepoint;
+    public int[] win=new int[20];
 
     public data(inventory Inventory)
     {
@@ -19,6 +20,7 @@ public class data
        invtext = Inventory.inventorysname;
        LV = settings.LVget();
        name = nameM.nameget();
+       win = DialogueBassclass.dialogs.winsget();
        positionsavepoint = Inventory.Savepoint;
        Savetime+=1;
     }

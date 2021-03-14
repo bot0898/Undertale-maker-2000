@@ -24,12 +24,13 @@ namespace DialogueBassclass
         public damage Damage;
         public enemy Enemy;
         public Color color1;
-        public static int win;
+        public static int[] win=new int[20];
+        public  int[] windisp=new int[20];
         public static Vector2 backpos;
         // Start is called before the first frame update
         void Start()
         {
-            win = 0;
+            win = dead.newwinsget();
             backpos = inventory.fightpositionget();
             if (lang == 0)
             {
@@ -46,6 +47,7 @@ namespace DialogueBassclass
         // Update is called once per frame
         void Update()
         {
+            windisp = win;
             if (c[0] == true)
             {
                 d[0].GetComponent<command>().fight();
@@ -73,17 +75,22 @@ namespace DialogueBassclass
             {
                 heartmove.presseds = true;
                 this.GetComponent<DialogueBassclass.dialogs>().youwin(0); 
-                win = 1;
+                win[overworldmove.nowbattleget()] = 1;
                 Attackmaker.ends = true;
                 c[4] = false;
             }
         }
-        public static int winget(string a,int i)
+
+        public static int winget(string a,int i,int b)
         {
             if (a == "=")
             {
-                win = i;
+                win[b] = i;
             }
+            return win[b];
+	    }
+        public static int[] winsget()
+        {
             return win;
 	    }
         public static Vector2 backposget()

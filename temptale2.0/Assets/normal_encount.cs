@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bossencount : MonoBehaviour
+public class normal_encount : MonoBehaviour
 {
-    
     // Start is called before the first frame update
     void Start()
     {
