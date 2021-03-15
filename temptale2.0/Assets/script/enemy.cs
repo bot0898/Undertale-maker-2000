@@ -14,13 +14,31 @@ public class enemy : MonoBehaviour
     public attackmaker Attackmaker;
     public float aa;
     public Color color1;
+    public bool n0rmal;
     // Start is called before the first frame update
+    void Awake()
+    {
+        if (n0rmal == true)
+        {
+            overworldmove.nowbattlegets("=",Random.Range(1, 7));
+        }
+    }
     void Start()
     {
         rd = GetComponent<SpriteRenderer>();
-        if (overworldmove.nowbattleget() == 1)
+        if (n0rmal == false)
         {
-            rd.sprite =b[3];
+            if (overworldmove.nowbattleget() == 1)
+            {
+                rd.sprite =b[3];
+            }
+        }
+        if (n0rmal == true)
+        {
+            if (overworldmove.nowbattleget() == 1)
+            {
+                rd.sprite =b[3];
+            }
         }
     }
 
@@ -49,6 +67,7 @@ public class enemy : MonoBehaviour
         StartCoroutine("timer");
         if (HP <= 0)
         { 
+            HP = 0;
             DialogueBassclass.dialogs.winget("=",2,overworldmove.nowbattleget());
             d.GetComponent<DialogueBassclass.dialogs>().youwin(XP); 
             gameObject.SetActive (false);

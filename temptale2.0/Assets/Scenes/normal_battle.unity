@@ -2004,6 +2004,7 @@ MonoBehaviour:
   HP: 0
   MaxHP: 184
   damag: 10
+  debug: 0
 --- !u!1 &844997357
 GameObject:
   m_ObjectHideFlags: 0
@@ -4435,11 +4436,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   turn: 0
+  attackr: 0
   myturn: 1
   ends: 0
   firstattack: 0
   Sanstextmap: {fileID: 690575646}
   hearts: {fileID: 806788546}
+  n0rmal: 1
 --- !u!4 &1884683455
 Transform:
   m_ObjectHideFlags: 0
@@ -4962,6 +4965,7 @@ MonoBehaviour:
   Attackmaker: {fileID: 1884683454}
   aa: 255
   color1: {r: 1, g: 1, b: 1, a: 0.49803922}
+  n0rmal: 1
 --- !u!212 &2000069665
 SpriteRenderer:
   m_ObjectHideFlags: 0

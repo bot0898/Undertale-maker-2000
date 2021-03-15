@@ -89,8 +89,12 @@ namespace DialogueBassclass
             }
             return win[b];
 	    }
-        public static int[] winsget()
+        public static int[] winsget(string a,int[] i)
         {
+            if (a == "=")
+            {
+                win = i;
+            }
             return win;
 	    }
         public static Vector2 backposget()
@@ -146,29 +150,29 @@ namespace DialogueBassclass
         {
             if (a == 0)
             {
-                StartCoroutine(Dialogue("you ate the "+b+"\n  it recovered"+heal+"HP!","* ",false,0.00005f,null));
+                StartCoroutine(Dialogue("you ate the "+b+"\n  it recovered"+heal+"HP!","* ",false,0.00005f,sound3));
                 c[1] = true;
             }
             if (a == 1)
             {
-                StartCoroutine(Dialogue("you ate the "+b+"\n  it recovered"+heal+"HP!","* ",false,0.00005f,null));
+                StartCoroutine(Dialogue("you ate the "+b+"\n  it recovered"+heal+"HP!","* ",true,0.00005f,sound3));
                 c[1] = true;
             }
             if (a == 2)
             {
-                StartCoroutine(Dialogue("you ate the "+b+"\n  it recovered"+heal+"HP!","* ",false,0.00005f,null));
+                StartCoroutine(Dialogue("you ate the "+b+"\n  it recovered"+heal+"HP!","* ",true,0.00005f,sound3));
                 c[1] = true;
             }
             if (a == 3)
             {
-                StartCoroutine(Dialogue("you ate the "+b+"\n  it recovered"+heal+"HP!","* ",false,0.00005f,null));
+                StartCoroutine(Dialogue("you ate the "+b+"\n  it recovered"+heal+"HP!","* ",true,0.00005f,sound3));
                 c[1] = true;
             }
             Damage.HP += heal;
         }
         public void check()
         {
-            StartCoroutine(Dialogue(name+ "ATK1DFS1\ntestmonster","* ",false,0.00005f,null));
+            StartCoroutine(Dialogue(name+ "ATK1DFS1\ntestmonster","* ",true,0.00005f,sound3));
             c[1] = true;
         }
         public void acting(int a)
@@ -194,11 +198,11 @@ namespace DialogueBassclass
             gameObject.SetActive (true);
             if (lang == 0)
             {
-                StartCoroutine(Dialogue(input[i],"* ",false,0.00005f,null));
+                StartCoroutine(Dialogue(input[i],"* ",true,0.01f,sound3));
             }
             if (lang == 1)
             {
-                StartCoroutine(Dialogue(inputjp[i],"* ",false,0.00005f,null));
+                StartCoroutine(Dialogue(inputjp[i],"* ",true,0.01f,sound3));
             }
         }
         public void youwin(int xp)
@@ -207,7 +211,7 @@ namespace DialogueBassclass
             d[1].GetComponent<attackmaker>().end(); 
             d[0].GetComponent<command>().back(); 
             d[2].GetComponent<attackbar>().back(); 
-            StartCoroutine(Dialogue("You won and gained "+xp+" xp \nand 0 gold","* ",false,0.00005f,null));
+            StartCoroutine(Dialogue("You won and gained "+xp+" xp \nand 0 gold","* ",true,0.00005f,sound3));
             c[3] = true;
         }
         public void off()

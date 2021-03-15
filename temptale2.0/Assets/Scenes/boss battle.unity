@@ -1294,8 +1294,8 @@ MonoBehaviour:
   Attackmaker: {fileID: 1884683454}
   input:
   - Howdy!
-  - Howdy!
-  - 
+  - hay ya
+  - ohhh yes
   - 
   - 
   - 
@@ -2004,6 +2004,7 @@ MonoBehaviour:
   HP: 0
   MaxHP: 184
   damag: 10
+  debug: 0
 --- !u!1 &844997357
 GameObject:
   m_ObjectHideFlags: 0
@@ -4435,11 +4436,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   turn: 0
+  attackr: 0
   myturn: 1
   ends: 0
   firstattack: 0
   Sanstextmap: {fileID: 690575646}
   hearts: {fileID: 806788546}
+  n0rmal: 0
 --- !u!4 &1884683455
 Transform:
   m_ObjectHideFlags: 0
@@ -4499,7 +4502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0999dabae477c5e4fa475cace0581a45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound3: {fileID: 0}
+  sound3: {fileID: 8300000, guid: 7bdbab4a726ed8b4f8480a9355f1e982, type: 3}
   ends: 0
   audioSource: {fileID: 1575334748}
   input:
@@ -4757,6 +4760,7 @@ MonoBehaviour:
   Damage: {fileID: 806788549}
   Enemy: {fileID: 2000069664}
   color1: {r: 0.98333335, g: 1, b: 0, a: 1}
+  windisp: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!102 &1924463766
 TextMesh:
   serializedVersion: 3
@@ -4961,6 +4965,7 @@ MonoBehaviour:
   Attackmaker: {fileID: 1884683454}
   aa: 255
   color1: {r: 1, g: 1, b: 1, a: 0.49803922}
+  n0rmal: 0
 --- !u!212 &2000069665
 SpriteRenderer:
   m_ObjectHideFlags: 0

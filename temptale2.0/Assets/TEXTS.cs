@@ -238,10 +238,10 @@ namespace DialogueBassclass
             if (Input.GetKey(KeyCode.Return)&&texts[0] == true)
             {
                 texts[0] = false;
-                StartCoroutine("flash");
+                StartCoroutine(flash("boss battle"));
             }
         }
-        IEnumerator flash()
+        IEnumerator flash(string load)
         {
             yield return new WaitForSeconds(0.1f);
             d.GetComponent<onoff>().on(true);
@@ -263,11 +263,15 @@ namespace DialogueBassclass
             audioSource.PlayOneShot(sound1[1]);
             yield return new WaitForSeconds(0.25f);
             c.GetComponent<overworldmove>().dialogs[0].GetComponent<onoff>().on(false);
-            SceneManager.LoadScene ("boss battle");
+            SceneManager.LoadScene (load);
         }
         public void text(string a)
         {
             GetComponent<TextMesh>().text = a;
+        }
+        public void flashs(string a)
+        {
+            StartCoroutine(flash(a));
         }
         public void fontchange(Font fonts,Material m)
         {

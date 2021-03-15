@@ -20,7 +20,7 @@ public class data
        invtext = Inventory.inventorysname;
        LV = settings.LVget();
        name = nameM.nameget();
-       win = DialogueBassclass.dialogs.winsget();
+       win = DialogueBassclass.dialogs.winsget(null,null);
        positionsavepoint = Inventory.Savepoint;
        Savetime+=1;
     }

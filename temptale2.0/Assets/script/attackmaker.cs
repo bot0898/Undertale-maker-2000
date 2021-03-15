@@ -9,11 +9,13 @@ public class attackmaker : MonoBehaviour
     public GameObject[] attacks = new GameObject[100];
     public GameObject[] d = new GameObject[40];
     public int turn;
+    public int attackr;
     public bool myturn;
     public bool ends;
     public bool firstattack;
     public DialogueBassclass.texts Sanstextmap;
     public heartmove_remastered hearts;
+    public bool n0rmal;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,28 +52,59 @@ public class attackmaker : MonoBehaviour
     }
     IEnumerator attack(int turns)
     {
-        if (ends == false)
+        if (n0rmal == false)
         {
-            if (turns ==  0)
+            if (ends == false)
             {
-                trggers[0] = Instantiate(attacks[0]) as GameObject; 
-                trggers[0].GetComponent<attackmove>().go();
-                yield return new WaitForSeconds(2f);
-                this.GetComponent<attackmaker>().attackend();
+                if (turns ==  0)
+                {
+                    trggers[0] = Instantiate(attacks[0]) as GameObject; 
+                    trggers[0].GetComponent<attackmove>().go();
+                    yield return new WaitForSeconds(2f);
+                    this.GetComponent<attackmaker>().attackend();
+                }
+                if (turns ==  1)
+                {
+                    trggers[0] = Instantiate(attacks[0]) as GameObject; 
+                    trggers[0].GetComponent<attackmove>().go();
+                    yield return new WaitForSeconds(2f);
+                    this.GetComponent<attackmaker>().attackend();
+                }
+                if (turns ==  2)
+                {
+                    trggers[1] = Instantiate(attacks[0]) as GameObject; 
+                    trggers[1].GetComponent<attackmove>().go();
+                    yield return new WaitForSeconds(2f);
+                    this.GetComponent<attackmaker>().attackend();
+                }
             }
-            if (turns ==  1)
+        }
+        if (n0rmal == true)
+        {
+            if (ends == false)
             {
-                trggers[0] = Instantiate(attacks[0]) as GameObject; 
-                trggers[0].GetComponent<attackmove>().go();
-                yield return new WaitForSeconds(2f);
-                this.GetComponent<attackmaker>().attackend();
-            }
-            if (turns ==  2)
-            {
-                trggers[1] = Instantiate(attacks[0]) as GameObject; 
-                trggers[1].GetComponent<attackmove>().go();
-                yield return new WaitForSeconds(2f);
-                this.GetComponent<attackmaker>().attackend();
+                attackr = Random.Range(1, 3);
+                if (attackr ==  1)
+                {
+                    trggers[0] = Instantiate(attacks[0]) as GameObject; 
+                    trggers[0].GetComponent<attackmove>().go();
+                    yield return new WaitForSeconds(2f);
+                    this.GetComponent<attackmaker>().attackend();
+                }
+                if (attackr ==  2)
+                {
+                    trggers[0] = Instantiate(attacks[0]) as GameObject; 
+                    trggers[0].GetComponent<attackmove>().go();
+                    yield return new WaitForSeconds(2f);
+                    this.GetComponent<attackmaker>().attackend();
+                }
+                if (attackr ==  3)
+                {
+                    trggers[1] = Instantiate(attacks[0]) as GameObject; 
+                    trggers[1].GetComponent<attackmove>().go();
+                    yield return new WaitForSeconds(2f);
+                    this.GetComponent<attackmaker>().attackend();
+                }
             }
         }
         yield return null;

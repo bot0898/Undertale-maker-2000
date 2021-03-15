@@ -35,6 +35,18 @@ public class overworldmove : MonoBehaviour
     {
         return nowbattle;
     }
+    public static int nowbattlegets(string a,int b)
+    {
+        if (a =="=")
+        {
+            nowbattle =b;
+        }
+        if (a =="+")
+        {
+            nowbattle +=b;
+        }
+        return nowbattle;
+    }
     // Update is called once per frame
     void FixedUpdate()
     {

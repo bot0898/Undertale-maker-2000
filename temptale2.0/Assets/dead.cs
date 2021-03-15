@@ -10,16 +10,24 @@ public class dead : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameObject.SetActive (true);
         winsdispl = wins;
-        wins = DialogueBassclass.dialogs.winsget();
+        wins = DialogueBassclass.dialogs.winsget(null,null);
+        if (type != 9999)
+        {
+        if ( DialogueBassclass.dialogs.winget(null,0,type) == 0)
+        {
+            gameObject.SetActive (true);
+        }
         if ( DialogueBassclass.dialogs.winget(null,0,type) == 1)
         {
-            Destroy (this.gameObject);
+            gameObject.SetActive (false);
         }
         if ( DialogueBassclass.dialogs.winget(null,0,type) == 2)
         {
-            Destroy (this.gameObject);
+            gameObject.SetActive (false);
         } 
+        }
     }
     public static int[] newwinsget()
     {
@@ -28,13 +36,45 @@ public class dead : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (type != 9999)
+        {
+        if ( DialogueBassclass.dialogs.winget(null,0,type) == 0)
+        {
+            gameObject.SetActive (true);
+        }
         if ( DialogueBassclass.dialogs.winget(null,0,type) == 1)
         {
-            Destroy (this.gameObject);
+            gameObject.SetActive (false);
         }
         if ( DialogueBassclass.dialogs.winget(null,0,type) == 2)
         {
-            Destroy (this.gameObject);
+            gameObject.SetActive (false);
         } 
+        }
+    }
+    public void on()
+    {
+        if (type != 9999)
+        {
+        if ( DialogueBassclass.dialogs.winget(null,0,type) == 0)
+        {
+            gameObject.SetActive (true);
+        }
+        if ( DialogueBassclass.dialogs.winget(null,0,type) == 1)
+        {
+            gameObject.SetActive (false);
+        }
+        if ( DialogueBassclass.dialogs.winget(null,0,type) == 2)
+        {
+            gameObject.SetActive (false);
+        } 
+        }
+        if (type == 9999)
+        {
+        foreach (Transform childTransform in this.transform)
+        {
+            childTransform.gameObject.GetComponent<dead>().on();
+        }
+        }
     }
 }

@@ -22,9 +22,11 @@ public class inventory : MonoBehaviour
     public static float atk;
     public static float dfs;
     public static int armor;
+    public dead urdead;
     // Start is called before the first frame update
     void Start()
     {
+        urdead.on();
         menu.GetComponent<onoff>().on(false);
         fightposition = DialogueBassclass.dialogs.backposget();
         if ( DialogueBassclass.dialogs.winget(null,0,overworldmove.nowbattleget()) == 0)
@@ -97,6 +99,7 @@ public class inventory : MonoBehaviour
             inventorysname = Data.invtext;
             settings.LVChange(Data.LV);
             nameM.namechange(Data.name);
+            DialogueBassclass.dialogs.winsget("=",Data.win);
             transform.position = SavepointVector2[Data.positionsavepoint];
             Debug.Log("Loaded");
         }
